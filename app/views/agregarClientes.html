@@ -1,0 +1,17 @@
+
+<form id="form-ingreso" ng-controller="addClientCtrl" ng-submit="addCliente(newClie)">
+	<legend> Cliente:</legend>
+	<div class="form-group">
+	  <input required type="text" class="form-control" placeholder="Ingrese Nombre" name="nombre" ng-model="newClie.nombreCompleto" ng-value="nombreCliente">
+	</div>
+	<div class="form-group">
+	  <input required type="email" class="form-control" placeholder="Ingrese Email" name="email" ng-model="newClie.email" ng-value="emailCliente">
+	</div>
+	<div class="form-group">
+	  <input required type="text" class="form-control" placeholder="Ingrese Telefono" name="telefono" ng-model="newClie.telefono" ng-value="telefonoCliente">
+	</div>
+
+	  <input type="submit" class="btn btn-success btn-lg" value="Guardar" >
+	  <button class="btn btn-success btn-lg"  ng-click="cambioVista('clientes')">Volver</button>
+	</div>
+</form>

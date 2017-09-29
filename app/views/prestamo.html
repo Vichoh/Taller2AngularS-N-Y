@@ -1,0 +1,28 @@
+<form id="form-prestamo" ng-controller="prestamoCtrl" ng-submit="generarPrestamo()">
+	<legend> Prestamo:</legend>
+	<div class="btn-group">
+	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+	    {{nomCliente}} <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" >
+	    <li ng-repeat="cliente in clientes" ng-click="addNomCliente($index+1)"><a href="#">{{cliente.nombreCompleto}}</a></li>	    
+	  </ul>
+	</div>
+	<div class="btn-group">
+	  <input required type="number" class="btn-control" placeholder="Ingrese monto" name="prestamo" ng-model="newDeudas.prestamo" >
+	</div>
+
+	<div class="btn-group">
+	  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	   {{cuot}} <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" > 
+	    <li ng-repeat="cuota in tipoCuotas" ng-click="addcantCuota($index+1)"><a href="#"  >{{cuota.n_cuotas}}</a></li>
+	   
+	  </ul>
+	</div>
+	<div class="btn-group"><input type="submit" class="btn btn-success btn-lg" value="Generar Prestamo" ></div>
+	 
+	  
+	</div>
+</form>

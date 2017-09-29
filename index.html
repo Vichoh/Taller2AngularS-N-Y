@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="lib/css/simple-sidebar.css" rel="stylesheet">
+    
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    
+    <script src="lib/js/angular-local-storage.min.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/controllers/controller.js"></script>
+   
+    
+</head>
+
+<body ng-controller="principalCtr">
+
+    <div id="wrapper" >
+
+       
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Sistema de Prestamos
+                    </a>
+                </li>
+                <li ng-click="cambioVista('clientes')">
+                    <a href="#">Clientes</a>
+                </li>
+                <li ng-click="cambioVista('prestamo')">
+                    <a href="#">Prestamos</a>
+                </li>
+                <li ng-click="cambioVista('deudas')">
+                    <a href="#">Deudas</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <a href="#menu-toggle"  class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-tasks"></span> Menu</a>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                    
+
+                        </div>
+                         <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <CENTER><h2 class="panel-title"><a href=""><strong>Capital:   $</strong></a><strong>{{capital}}</strong></h2></CENTER>
+                            
+                          </div>
+                        </div>
+                        
+                        <CENTER><div class="col-lg-12" ng-include="menu"></div></CENTER>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+                        
+
+
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="lib/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

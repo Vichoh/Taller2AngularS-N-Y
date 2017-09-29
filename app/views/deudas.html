@@ -1,0 +1,35 @@
+<div class="table-responsive" ng-controller="deudasCtrl">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Prestamo</th>
+                <th>Deuda Total</th>
+                <th>Deuda Actual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="success" ng-repeat="deuda in deudas track by $index">
+                <td>{{deuda.cliente.nombreCompleto}}</td>
+                <td>{{deuda.cliente.email}}</td>
+                <td>{{deuda.cliente.telefono}}</td>
+                <td>${{deuda.prestamo}}</td>
+                <td>${{deuda.total}}</td>
+                <td>${{(deudaActual(deuda))}}</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#" ng-click="goPagos('pagos',$index)" ><span class="glyphicon glyphicon-plus-sign"></span> Estado</a> </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Deuda Total</th>
+                <th>${{deudaTotal()}}</th>                
+            </tr>
+        </thead>        
+    </table>
+
+</div>
